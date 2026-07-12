@@ -1,0 +1,70 @@
+{
+  "name": "browser-image-guard",
+  "version": "0.1.0",
+  "description": "Harden browser image uploads in one call: magic-byte validation, HEIC to JPEG, EXIF-stripping compression, worker-with-main-thread-fallback, and safe filenames.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Raiez Alshamaly",
+  "keywords": [
+    "image",
+    "upload",
+    "compression",
+    "heic",
+    "exif",
+    "file-type",
+    "magic-bytes",
+    "browser",
+    "validation",
+    "security"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raiez-alshamaly/browser-image-guard.git"
+  },
+  "homepage": "https://github.com/raiez-alshamaly/browser-image-guard#readme",
+  "bugs": {
+    "url": "https://github.com/raiez-alshamaly/browser-image-guard/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "browser-image-compression": "^2.0.0",
+    "file-type": ">=19",
+    "heic2any": "^0.0.4"
+  },
+  "peerDependenciesMeta": {
+    "heic2any": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "browser-image-compression": "^2.0.2",
+    "file-type": "^19.6.0",
+    "happy-dom": "^15.11.7",
+    "heic2any": "^0.0.4",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
